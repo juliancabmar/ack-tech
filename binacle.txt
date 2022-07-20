@@ -2,4 +2,4 @@ Project github:
 
 https://github.com/adrianhajdin/ecommerce_sanity_stripe
 
-Elapsed time: 00:24:00
+Elapsed time: 00:34:00
