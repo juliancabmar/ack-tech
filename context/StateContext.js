@@ -10,9 +10,6 @@ export const StateContext = ({ children }) => {
   const [totalQuantities, setTotalQuantities] = useState(0);
   const [qty, setQty] = useState(1);
 
-  let foundProduct;
-  let index;
-
   const incQty = () => {
     setQty((prevQty) => prevQty + 1)
   }
@@ -50,20 +47,35 @@ export const StateContext = ({ children }) => {
   }
 
   const toggleCartItemQuantity = (id, value) => {
-    foundProduct = cartItems.find((item) => item._id === id);
-    index = cartItems.findIndex((product) => product._id === id);
 
     if (value === 'inc') {
-      let nexCartItems = [...cartItems, {...foundProduct, quantity: foundProduct.quantity + 1}];
-      setTotalPrice((prevTotalPrice) => prevTotalPrice + foundProduct.price);
-      setTotalQuantities((prevTotalQuantities) => prevTotalQuantities + 1);
+      const updatedCartItems = cartItems.map((cartProduct) => {
+        if (cartProduct._id === id) {
+          cartProduct.quantity += 1;
+          setTotalPrice((prevTotalPrice) => prevTotalPrice + cartProduct.price);
+          setTotalQuantities((prevTotalQuantities) => prevTotalQuantities + 1);
+        }
+        return cartProduct
+      })
+      setCartItems(updatedCartItems);
+
+      
     }
     else if (value === 'dec') {
-      if (foundProduct.quantity > 1) {
-        let nexCartItems = [...cartItems, {...foundProduct, quantity: foundProduct.quantity - 1}];
-        setTotalPrice((prevTotalPrice) => prevTotalPrice - foundProduct.price);
-        setTotalQuantities((prevTotalQuantities) => prevTotalQuantities - 1);
-      } 
+      const updatedCartItems = cartItems.map((cartProduct) => {
+        if (cartProduct._id === id) {
+          if (cartProduct.quantity > 1) {
+            cartProduct.quantity -= 1;
+            setTotalPrice((prevTotalPrice) => prevTotalPrice - cartProduct.price);
+            setTotalQuantities((prevTotalQuantities) => prevTotalQuantities - 1);
+          }
+          
+        }
+        return cartProduct
+      })
+      setCartItems(updatedCartItems);
+      
+      
     }
   }
 
