@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import {
   AiOutlineMinus,
   AiOutlinePlus,
@@ -13,12 +13,13 @@ import { urlFor } from '../../lib/client';
 import { Product } from '../../components';
 
 const ProductDetails = ({ product, products }) => {
+  useEffect(() => resetQty(),[]);
   
   const { image, name, details, price } = product;
   
   const [index, setIndex] = useState(0);
 
-  const { incQty, decQty, qty, onAdd } = useStateContext();
+  const { incQty, decQty, resetQty, qty, onAdd } = useStateContext();
 
   return (
     <div>

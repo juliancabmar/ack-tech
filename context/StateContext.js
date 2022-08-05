@@ -20,6 +20,9 @@ export const StateContext = ({ children }) => {
     }
     )
   }
+  const resetQty = () => {
+    setQty(1)
+  }
 
   const onAdd = (product, quantity) => {
     const checkProductInCart = cartItems.find((item) => item._id === product._id);
@@ -58,7 +61,6 @@ export const StateContext = ({ children }) => {
         return cartProduct
       })
       setCartItems(updatedCartItems);
-
       
     }
     else if (value === 'dec') {
@@ -74,9 +76,15 @@ export const StateContext = ({ children }) => {
         return cartProduct
       })
       setCartItems(updatedCartItems);
-      
-      
     }
+  }
+
+  const onRemove = (id) => {
+    const product = cartItems.find((item) => item._id === id);
+    const newCartItems = cartItems.filter((item) => item._id != id);
+    setTotalPrice((prevTotalPrice) => prevTotalPrice - (product.price * product.quantity));
+    setTotalQuantities((prevTotalQuantities) => prevTotalQuantities - product.quantity);
+    setCartItems(newCartItems);
   }
 
   return (
@@ -89,7 +97,9 @@ export const StateContext = ({ children }) => {
       qty,
       incQty,
       decQty,
+      resetQty,
       onAdd,
+      onRemove,
       toggleCartItemQuantity
     }
 
