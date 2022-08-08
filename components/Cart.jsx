@@ -21,23 +21,28 @@ const Cart = () => {
   } = useStateContext();
 
   const handleCheckout = async () => {
-    const stripe = await getStripe();
-
-    const response = await fetch('/api/stripe', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(cartItems),
-    });
-
-    if(response.statusCode === 500) return;
     
-    const data = await response.json();
+      const stripe = await getStripe();
 
-    toast.loading('Redirecting...');
+      const response = await fetch('/api/stripe', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY
+        },
+        body: JSON.stringify(cartItems),
+      });
 
-    stripe.redirectToCheckout({ sessionId: data.id });
+      if(response.statusCode === 500) return;
+      const data = await response.json();
+
+      toast.loading('Redirecting...');
+
+      stripe.redirectToCheckout({ sessionId: data.id });
+    
+
+      
+
   }
 
   return (
@@ -82,7 +87,7 @@ const Cart = () => {
                       <span className='minus' onClick={() => toggleCartItemQuantity(item._id, 'dec')}>
                         <AiOutlineMinus />
                       </span>
-                      <span className='num' onClick="">{item.quantity}</span>
+                      <span className='num' >{item.quantity}</span>
                       <span className='plus' onClick={() => toggleCartItemQuantity(item._id, 'inc')}>
                         <AiOutlinePlus />
                       </span>
