@@ -11,7 +11,7 @@ const NavBar = () => {
   return (
     <div className='navbar-container'>
       <p className='logo'>
-        <Link href="/">Adjucama Store</Link>
+        <Link href="/">Ack-Tech Store</Link>
       </p>
       <button type='button' className='cart-icon' onClick={() => {setShowCart(true); resetQty()}}>
         <AiOutlineShopping />

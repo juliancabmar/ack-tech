@@ -1,6 +1,11 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Ack-Tech Store (e-commerce App)
+## Overview:
 
-## Getting Started
+This project simulates an online tech commerce site, giving us the capability of follow all the buy proccess... from navigate for all products, add we like to the cart and simulate a real payment thanks to Stripe.
+
+## Run online:
+http://ack-tech.com
+
 
 First, run the development server:
 
