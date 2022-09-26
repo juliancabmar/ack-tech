@@ -28,10 +28,11 @@ width: 100%;
 
 .navbar-container{
   display: flex;
+  padding: 0px 15px;
   justify-content: space-between;
-  margin: 6px 18px;
   position: relative;
 }
+
 .marquee-text{
   font-size: 29px;
   font-weight: 600;
