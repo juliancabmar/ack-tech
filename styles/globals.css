@@ -65,6 +65,11 @@ width: 100%;
     -webkit-text-stroke: 1px #f02d34;
     margin-left: 6px;
 }
+
+.main-logo{
+  cursor: pointer;
+}
+
 .logo{
   color: gray;
   font-size: 18px;
