@@ -452,7 +452,7 @@ padding: 30px 65px;
 .small-image{
   border-radius: 8px;
   background-color: #ebebeb;
-  width: 70px;
+  width: auto;
   height: 70px;
   cursor: pointer;
 }
