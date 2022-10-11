@@ -15,6 +15,8 @@ https://ack-tech-store.vercel.app
 I found Sanity to be an excellent solution both as a data and multimedia server, and knowing Graph-ql queries previously, Sanity's GROQ (Graph-Relational Object Queries) became quite familiar to me.
 #### Payment Simulation:
 Other developers told me about Stripe, so I tried it and loved it... I really found it a very simple but complete solution to the problem of managing payments and shipping charges.
+#### Deploy on Vercel:
+I try various servers, but for Next.js apps this was my prefered.
 
 ## How install and run:
 First clone the repo and cd on it:
