@@ -6,22 +6,31 @@ This project simulates an online tech commerce site, giving us the capability of
 ## Run online:
 http://ack-tech.com
 
+## Project Description:
+#### Frontend and Routing:
+  I chose to use Next.js over a traditional React.app because it seemed easier to structure and also take advantage of its simplification in routing... And I also wanted to learn more about Next.js obviously ;) 
+#### Database CRUD:
+I found Sanity to be an excellent solution both as a data and multimedia server, and knowing Graph-ql queries previously, Sanity's GROQ (Graph-Relational Object Queries) became quite familiar to me.
+#### Payment Simulation:
+Other developers told me about Stripe, so I tried it and loved it... I really found it a very simple but complete solution to the problem of managing payments and shipping charges.
 
-First, run the development server:
-
+## How install and run:
+First clone the repo and cd on it:
 ```bash
-npm run dev
-# or
-yarn dev
+$ git clone https://github.com/ajcmarce/ack-tech
+$ cd ./ack-tech
 ```
+Install the dependencies:
+```bash
+$ npm install --legacy-peer-deps #(for avoid dependency issues)
+```
+Run the app:
+```bash
+$ npm run dev
+```
+Finally open [http://localhost:3000](http://localhost:3000) in your browser
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
 ## Learn More
 
