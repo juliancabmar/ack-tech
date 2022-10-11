@@ -3,6 +3,8 @@
 
 This project simulates an online tech commerce site, giving us the capability of follow all the buy proccess... from navigate for all products, add we like to the cart and simulate a real payment thanks to Stripe.
 
+![ack-tech](https://user-images.githubusercontent.com/85290842/195070652-bdae6057-a45a-4e00-a0f1-8cb2d0eaa28a.png)
+
 ## Run online:
 https://ack-tech-store.vercel.app
 
