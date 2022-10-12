@@ -21,7 +21,7 @@ I try various servers, but for Next.js apps this was my prefered.
 ## How install and run:
 First clone the repo and cd on it:
 ```bash
-$ git clone https://github.com/ajcmarce/ack-tech
+$ git clone https://github.com/juliancabmar/ack-tech
 $ cd ./ack-tech
 ```
 Install the dependencies:
